@@ -1,9 +1,10 @@
 import os
-os.system('pip install -r reqirements.txt')
+
+os.system('pip install -r requirements.txt')
 os.system('cls')
 
-
-import sys, shutil, win32com.client, pyowm, pyttsx3, time, datetime, webbrowser, smtplib, wikipedia, wolframalpha, random
+import sys, shutil, win32com.client, pyowm, pyttsx3, time, datetime, webbrowser, smtplib, wikipedia, wolframalpha, \
+    random
 from playsound import playsound
 
 sys.path.insert(0, 'modules/')
@@ -64,7 +65,6 @@ name = str(input())
 pro_file.write(name)
 pro_file.write('\n')
 
-
 print('\n')
 print('Enter your Date of Birth :')
 speak('Enter your date of birth')
@@ -72,14 +72,12 @@ dob = str(input())
 pro_file.write(dob)
 pro_file.write('\n')
 
-
 print('\n')
 print('Enter your phone number : *')
 speak('Enter your phone number, it is optional you may skip this')
 phoneno = str(input())
 pro_file.write(phoneno)
 pro_file.write('\n')
-
 
 print('\n')
 print('Enter your Email ID :')
@@ -102,14 +100,12 @@ music_dir = str(input())
 pro_file.write(music_dir)
 pro_file.write('\n')
 
-
 print('\n')
 print('Enter your Video Directory : *')
 speak('Enter your video directory (optional)')
 movie_dir = str(input())
 pro_file.write(movie_dir)
 pro_file.write('\n')
-
 
 print('\n')
 print('Enter Serial key : (type \'trial\' to install trial version)')
@@ -164,18 +160,18 @@ print('Creating EXE')
 speak('creating exe')
 time.sleep(1)
 os.system('cls')
-os.system('pyinstaller --hidden-import=win32com.client --hidden-import=pyttsx3 --hidden-import=pyttsx3.drivers --hidden-import=pyttsx3.drivers.dummy --hidden-import=pyttsx3.drivers.espeak --hidden-import=pyttsx3.drivers.nsss --hidden-import=pyttsx3.drivers.sapi5 --hidden-import=pyowm --hidden-import=wikipedia --hidden-import=wolframalpha --hidden-import=playsound --hidden-import=speechrecognition --hidden-import=geocoder -F -i images\\jv_icon.ico modules\\jarvis.py')
+os.system(
+    'pyinstaller --hidden-import=win32com.client --hidden-import=pyttsx3 --hidden-import=pyttsx3.drivers --hidden-import=pyttsx3.drivers.dummy --hidden-import=pyttsx3.drivers.espeak --hidden-import=pyttsx3.drivers.nsss --hidden-import=pyttsx3.drivers.sapi5 --hidden-import=pyowm --hidden-import=wikipedia --hidden-import=wolframalpha --hidden-import=playsound --hidden-import=speechrecognition --hidden-import=geocoder -F -i images\\jv_icon.ico modules\\jarvis.py')
 os.system('cls')
 
-#==================================================================================
-#==================================================================================
-#==================================================================================
+# ==================================================================================
+# ==================================================================================
+# ==================================================================================
 
 
-
-#==================================================================================
-#========================== Create Uninstaller ====================================
-#==================================================================================
+# ==================================================================================
+# ========================== Create Uninstaller ====================================
+# ==================================================================================
 print('Creating Uninstaller')
 speak('creating uninstaller')
 time.sleep(2)
@@ -204,9 +200,9 @@ os.system('pyinstaller -F -i images\\uninstall_icon.ico modules\\uninstall.py')
 
 os.system('cls')
 
-#==================================================================================
-#==================================================================================
-#==================================================================================
+# ==================================================================================
+# ==================================================================================
+# ==================================================================================
 
 
 print('Re-Arranging Files...')
@@ -216,16 +212,16 @@ os.rename('dist\\uninstall.exe', 'uninstall.exe')
 time.sleep(2)
 os.system('cls')
 
-#==================================================================================
-#========================== Create Shorcut ========================================
-#==================================================================================
+# ==================================================================================
+# ========================== Create Shorcut ========================================
+# ==================================================================================
 print('Creating Shortcut')
 speak('creating shortcut')
 time.sleep(1)
 os.system('cls')
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
-desktop = r'C:\Users\Public\Desktop' # path to where you want to put the .lnk
+desktop = r'C:\Users\Public\Desktop'  # path to where you want to put the .lnk
 path_dsk = os.path.join(desktop, 'J.A.R.V.I.S..lnk')
 target_dsk = os.path.join(dir_path, 'jarvis.exe')
 # icon_dsk = r'images\jv_icon.ico' # not needed, but nice
@@ -234,19 +230,19 @@ shell = win32com.client.Dispatch("WScript.Shell")
 shortcut = shell.CreateShortCut(path_dsk)
 shortcut.Targetpath = target_dsk
 # shortcut.IconLocation = icon_dsk
-shortcut.WindowStyle = 1 # 7 - Minimized, 3 - Maximized, 1 - Normal
+shortcut.WindowStyle = 1  # 7 - Minimized, 3 - Maximized, 1 - Normal
 shortcut.save()
 
 shell = win32com.client.Dispatch("WScript.Shell")
 shortcut = shell.CreateShortCut('J.A.R.V.I.S..lnk')
 shortcut.Targetpath = target_dsk
 # shortcut.IconLocation = icon_dsk
-shortcut.WindowStyle = 1 # 7 - Minimized, 3 - Maximized, 1 - Normal
+shortcut.WindowStyle = 1  # 7 - Minimized, 3 - Maximized, 1 - Normal
 shortcut.save()
 
-#==================================================================================
-#==================================================================================
-#==================================================================================
+# ==================================================================================
+# ==================================================================================
+# ==================================================================================
 
 
 print('Removing Unwanted Trash')
